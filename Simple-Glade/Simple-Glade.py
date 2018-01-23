@@ -18,8 +18,6 @@ class MyFrame(wx.Frame):
         kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.Button01 = wx.Button(self, wx.ID_ANY, "Quitter")
-        self.button_1 = wx.Button(self, wx.ID_ANY, "Encore")
-
         self.__set_properties()
         self.__do_layout()
         # end wxGlade
