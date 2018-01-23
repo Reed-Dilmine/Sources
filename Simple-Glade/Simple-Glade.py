@@ -34,7 +34,6 @@ class MyFrame(wx.Frame):
         # begin wxGlade: MyFrame.__do_layout
         sizer_1 = wx.BoxSizer(wx.VERTICAL)
         sizer_1.Add(self.Button01, 0, 0, 0)
-        sizer_1.Add(0, 0, self.button_1, 0)
         self.SetSizer(sizer_1)
         self.Layout()
         self.SetSize((500, 500))
