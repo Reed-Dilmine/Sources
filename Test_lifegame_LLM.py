@@ -115,7 +115,7 @@ class Gameboard(Canvas):
         if fin == 1 :
             self.reset()
         if self.anim == 1 :
-            self.after(100, self.animer)
+            self.after(600, self.animer)
 
     def get_nb_near(self, cell):
         (x, y) = cell.get_pos()
