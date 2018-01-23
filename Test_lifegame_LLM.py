@@ -104,7 +104,7 @@ class Gameboard(Canvas):
     def animer(self):
         for i, c in self.cells.items() :
             nb = self.get_nb_near(c)
-            if c.get_state() == 0 and nb == 2 :
+            if c.get_state() == 0 and nb == 4 :
                 c.set_next_state(1)
             elif c.get_state() == 1 and nb != 2 and nb != 3 :
                 c.set_next_state(0)
