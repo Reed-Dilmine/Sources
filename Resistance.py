@@ -12,9 +12,7 @@
 from tkinter import *
 from math import log10 # logarithmes en base 10
 
-def quitter() :
-    global f
-    f.destroy()
+
 
 class Application(object):
     def __init__(self):
@@ -24,7 +22,7 @@ class Application(object):
         self.dessineResistance()
         Label(self.root, text ="Entrez la valeur de la résistance, en ohms :").grid(row =2, column =1, columnspan =3)
         Button(self.root, text ='Montrer', command =self.changeCouleurs).grid(row =3, column =1)
-        Button(self.root, text ='Quitter', command =quitter).grid(row =3, column =3)
+        Button(self.root, text ='Quitter', command =self.quitter).grid(row =3, column =3)
         self.entree = Entry(self.root, width =14)
         self.entree.grid(row =3, column =2)
         # Code des couleurs pour les valeurs de zéro à neuf :
@@ -76,6 +74,10 @@ class Application(object):
     def videEntree(self):
         self.entree.configure(bg ='white') # rétablir le fond blanc
         self.entree.delete(0, len(self.v1ch)) # enlever les car. présents
+
+    def quitter(self) :
+#    global root
+        self.root.destroy()
 
 # Programme principal :
 if __name__ == '__main__':
