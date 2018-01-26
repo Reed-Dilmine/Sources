@@ -2,7 +2,10 @@
 from tkinter import *
 from math import floor
 from time import sleep
+import sys
 
+def exitApp():
+    sys.exit()
 
 class Cell:
     """Cellule"""
@@ -155,7 +158,7 @@ class Application(Frame):
         cursor='hand1', relief='flat', overrelief='flat')
         self.btn_reset.grid(row=2, column=2, pady=10)
 
-        self.btn_quit= Button(self, text ="Quit", command =quit, \
+        self.btn_quit= Button(self, text ="Quit", command =exitApp, \
         bg='#D10518', fg='#FFF', activebackground='#EA3243', activeforeground='#FFF', \
         cursor='hand1', relief='flat', overrelief='flat')
         self.btn_quit.grid(row=2, column=3, sticky=W, pady=10)
