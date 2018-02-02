@@ -133,6 +133,9 @@ class Gameboard(Canvas):
         self.delete(self.tagCell)
         self.create_cells()
 
+    def suspend(self):
+        """ Suspend l'animation """
+        self.anim = 0
 
 class Application(Frame):
     """Application principale du jeu de la vie"""
@@ -144,22 +147,27 @@ class Application(Frame):
         self.master.title('Jeu de la vie')
 
         self.gameboard = Gameboard(self)
-        self.gameboard.grid(row=1, column=1, columnspan=3, padx=10, pady=10)
+        self.gameboard.grid(row=1, column=1, columnspan=6, padx=10, pady=10)
 
         self.btn_start = Button(self, text ="Start", command=self.gameboard.start, \
         bg='#04AB0A', fg='#FFF', activebackground='#1FD826', activeforeground='#FFF', \
         cursor='hand1', relief='flat', overrelief='flat')
-        self.btn_start.grid(row=2, column=1, sticky=E, pady=10)
+        self.btn_start.grid(row=2, column=2, pady=10)
+
+        self.btn_suspend= Button(self, text ="Pause", command=self.gameboard.suspend, \
+        bg='#FF8040', fg='#FFF', activebackground='#FFB591', activeforeground='#FFF', \
+        cursor='hand1', relief='flat', overrelief='flat')
+        self.btn_suspend.grid(row=2, column=3, pady=10)
 
         self.btn_reset= Button(self, text ="Stop", command=self.gameboard.reset, \
         bg='#3D6790', fg='#FFF', activebackground='#5E8BB6', activeforeground='#FFF', \
         cursor='hand1', relief='flat', overrelief='flat')
-        self.btn_reset.grid(row=2, column=2, pady=10)
+        self.btn_reset.grid(row=2, column=4, pady=10)
 
         self.btn_quit= Button(self, text ="Quit", command =self.exitApp, \
         bg='#D10518', fg='#FFF', activebackground='#EA3243', activeforeground='#FFF', \
         cursor='hand1', relief='flat', overrelief='flat')
-        self.btn_quit.grid(row=2, column=3, sticky=W, pady=10)
+        self.btn_quit.grid(row=2, column=5, pady=10)
 
         self.grid()
 
