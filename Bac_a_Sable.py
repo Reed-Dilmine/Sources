@@ -9,6 +9,8 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
+from tkinter import ttk
+from tkinter import tix
 from tkinter import *
 from random import randrange
 
@@ -59,9 +61,9 @@ if __name__ == '__main__': # ---- Programme de test ----
 	font =('Helvetica', 10, 'bold'), command =fen.destroy)
 	b_fin.pack(pady =2)
 	# tracé de 15 ellipses avec couleur et coordonnées aléatoires :
-	for i in range(15):
+	for i in range(25):
 		coul =couleurs[randrange(8)]
 		x1, y1 = randrange(400), randrange(300)
-		x2, y2 = x1 + randrange(10, 150), y1 + randrange(10, 150)
+		x2, y2 = x1 + randrange(10, 250), y1 + randrange(10, 250)
 		bac.create_oval(x1, y1, x2, y2, fill =coul)
 	fen.mainloop()
